@@ -1,0 +1,28 @@
+{
+  "name": "@brontosaurus/definition",
+  "version": "1.0.0",
+  "description": ":sweat_drops: Definition",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/Brontosaurus-Defination.git"
+  },
+  "keywords": [
+    "sudoo"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/Brontosaurus-Defination/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/Brontosaurus-Defination#readme",
+  "devDependencies": {
+    "@sudoo/triforce": "^1.1.0"
+  }
+}
