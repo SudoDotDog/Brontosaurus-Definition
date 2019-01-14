@@ -1,27 +1,56 @@
 /**
  * @author WMXPY
  * @namespace Definition
- * @description Index
+ * @description Declare
  */
 
-export type Basics = string | number | boolean;
-export type Encryptable = Basics | null | undefined | Basics[];
+import { Base64Converter, IBrontosaurusHeader, IBrontosaurusBody, Basics } from "./declare";
 
-export type EncryptableObject = Record<string, Encryptable>;
+export class BrontosaurusDefinition {
 
-export interface IBrontosaurusBody extends EncryptableObject {
+    public static withEncoder(encoder: Base64Converter, decoder: Base64Converter) {
 
-    application: string;
+        return new BrontosaurusDefinition(encoder, decoder);
+    }
 
-    username: string;
-    groups: string[];
+    private readonly _encoder: Base64Converter;
+    private readonly _decoder: Base64Converter;
 
-    infos: string[];
-}
+    private constructor(encoder: Base64Converter, decoder: Base64Converter) {
 
-export interface IBrontosaurusHeader extends EncryptableObject {
+        this._encoder = encoder;
+        this._decoder = decoder;
+    }
 
-    expireAt: number;
-    issuedAt: number;
-    key?: string;
+    public header(
+        expireAt: number,
+        issuedAt: number,
+        key: string,
+    ): string {
+
+        const header: IBrontosaurusHeader = {
+            expireAt,
+            issuedAt,
+
+            key,
+        };
+
+        return this._encoder(JSON.stringify(header));
+    }
+
+    public body(
+        username: string,
+        groups: string[],
+        infos: Record<string, Basics>,
+    ): string {
+
+        const body: IBrontosaurusBody = {
+            username,
+            groups,
+
+            infos,
+        };
+
+        return this._encoder(JSON.stringify(body));
+    }
 }
