@@ -31,3 +31,4 @@ export interface IBrontosaurusToken {
 }
 
 export type Base64Converter = (before: string) => string;
+export type Signer = (content: string) => string;

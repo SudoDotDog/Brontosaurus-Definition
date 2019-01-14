@@ -4,13 +4,25 @@
  * @description Declare
  */
 
-import { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken } from "./declare";
+import { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken, Signer } from "./declare";
 
 export class BrontosaurusDefinition {
 
     public static withEncoder(encoder: Base64Converter, decoder: Base64Converter) {
 
         return new BrontosaurusDefinition(encoder, decoder);
+    }
+
+    public static signWith(header: string, body: string, signer: Signer): string {
+
+        const medium: string = [header, body].join('.');
+        const signature: string = signer(medium);
+        return this.concat(header, body, signature);
+    }
+
+    public static concat(header: string, body: string, signature: string): string {
+
+        return [header, body, signature].join('.');
     }
 
     private readonly _encoder: Base64Converter;
@@ -54,11 +66,6 @@ export class BrontosaurusDefinition {
         return this._encoder(JSON.stringify(body));
     }
 
-    public concat(header: string, body: string, signature: string): string {
-
-        return [header, body, signature].join('.');
-    }
-
     public decouple(token: string): IBrontosaurusToken | null {
 
         const splited: string[] = token.split('.');
@@ -72,10 +79,10 @@ export class BrontosaurusDefinition {
             header: JSON.parse(this._decoder(header)),
             body: JSON.parse(this._decoder(body)),
             signature,
-        }
+        };
     }
 }
 
 export { Encryptable, EncryptableObject } from "./declare";
-export { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken };
+export { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken, Signer };
 
