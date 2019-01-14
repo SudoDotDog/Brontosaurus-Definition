@@ -22,7 +22,28 @@
     "url": "https://github.com/SudoDotDog/Brontosaurus-Defination/issues"
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Defination#readme",
-  "devDependencies": {
-    "@sudoo/triforce": "^1.1.0"
-  }
+	"dependencies": {},
+	"devDependencies": {
+		"@sudoo/triforce": "^1.1.0",
+		"@types/node": "^10.12.18"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"script/**/*.ts",
+			"src/**/*.ts"
+		],
+		"instrument": true,
+		"reporter": [
+			"json",
+			"text-summary"
+		],
+		"report-dir": "coverage",
+		"require": [
+			"./test/tshook.js"
+		],
+		"sourceMap": true
+	}
 }

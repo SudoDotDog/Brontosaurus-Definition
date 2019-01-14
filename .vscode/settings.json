@@ -3,7 +3,8 @@
         "Encryptable",
         "ifeq",
         "sudoo",
-        "triforce"
+        "triforce",
+        "tshook"
     ],
     "tslint.configFile": "typescript/tslint.json"
 }
