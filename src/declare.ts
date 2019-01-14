@@ -5,24 +5,29 @@
  */
 
 export type Basics = string | number | boolean;
-export type Encryptable = Basics | null | undefined | Basics[] | Record<string, Basics>;
+export type Encryptable = Basics | Basics[] | Record<string, Basics> | null | undefined;
 
 export type EncryptableObject = Record<string, Encryptable>;
 
 export interface IBrontosaurusBody extends EncryptableObject {
 
-    username: string;
-    groups: string[];
-
-    infos: Record<string, Basics>;
+    readonly username: string;
+    readonly groups: string[];
+    readonly infos: Record<string, Basics>;
 }
 
 export interface IBrontosaurusHeader extends EncryptableObject {
 
-    expireAt: number;
-    issuedAt: number;
+    readonly expireAt: number;
+    readonly issuedAt: number;
+    readonly key: string;
+}
 
-    key: string;
+export interface IBrontosaurusToken {
+
+    readonly header: IBrontosaurusHeader;
+    readonly body: IBrontosaurusBody;
+    readonly signature: string;
 }
 
 export type Base64Converter = (before: string) => string;

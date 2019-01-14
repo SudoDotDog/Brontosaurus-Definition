@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { Base64Converter, IBrontosaurusHeader, IBrontosaurusBody, Basics } from "./declare";
+import { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken } from "./declare";
 
 export class BrontosaurusDefinition {
 
@@ -53,4 +53,29 @@ export class BrontosaurusDefinition {
 
         return this._encoder(JSON.stringify(body));
     }
+
+    public concat(header: string, body: string, signature: string): string {
+
+        return [header, body, signature].join('.');
+    }
+
+    public decouple(token: string): IBrontosaurusToken | null {
+
+        const splited: string[] = token.split('.');
+        if (splited.length !== 3) {
+            return null;
+        }
+
+        const [header, body, signature] = splited;
+
+        return {
+            header: JSON.parse(this._decoder(header)),
+            body: JSON.parse(this._decoder(body)),
+            signature,
+        }
+    }
 }
+
+export { Encryptable, EncryptableObject } from "./declare";
+export { Base64Converter, Basics, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusToken };
+
