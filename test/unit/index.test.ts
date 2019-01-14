@@ -20,4 +20,14 @@ describe('Given {BrontosaurusDefinition} class', (): void => {
 
         expect(definition).to.be.instanceOf(BrontosaurusDefinition);
     });
+
+    it('should be able to concat values', (): void => {
+
+        const values: [string, string, string] = chance.unique(chance.string, 3) as [string, string, string];
+        const length: number = values.reduce((previous: number, current: string) => previous + current.length, 0);
+
+        const result: string = BrontosaurusDefinition.concat(...values);
+
+        expect(result).to.be.lengthOf(length + 2);
+    });
 });
