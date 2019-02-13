@@ -34,34 +34,12 @@ export class BrontosaurusDefinition {
         this._decoder = decoder;
     }
 
-    public header(
-        expireAt: number,
-        issuedAt: number,
-        key: string,
-    ): string {
-
-        const header: IBrontosaurusHeader = {
-            expireAt,
-            issuedAt,
-
-            key,
-        };
+    public header(header: IBrontosaurusHeader): string {
 
         return this._encoder(JSON.stringify(header));
     }
 
-    public body(
-        username: string,
-        groups: string[],
-        infos: Record<string, Basics>,
-    ): string {
-
-        const body: IBrontosaurusBody = {
-            username,
-            groups,
-
-            infos,
-        };
+    public body(body: IBrontosaurusBody): string {
 
         return this._encoder(JSON.stringify(body));
     }
