@@ -1,6 +1,6 @@
 {
 	"name": "@brontosaurus/definition",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"description": ":sweat_drops: Definition",
 	"main": "dist/index.js",
 	"directories": {
@@ -24,8 +24,7 @@
 	"homepage": "https://github.com/SudoDotDog/Brontosaurus-Defination#readme",
 	"dependencies": {},
 	"devDependencies": {
-		"@sudoo/triforce": "^1.4.0",
-		"@types/node": "^11.9.5"
+		"@sudoo/triforce": "^1.6.0"
 	},
 	"nyc": {
 		"extension": [
