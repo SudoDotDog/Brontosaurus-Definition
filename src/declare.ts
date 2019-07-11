@@ -14,10 +14,12 @@ export interface IBrontosaurusBody extends EncryptableObject {
     readonly username: string;
     readonly mint: string;
     readonly groups: string[];
+    readonly tags: string[];
     readonly infos: Record<string, Basics>;
     readonly beacons: Record<string, Basics>;
 
     readonly organization?: string;
+    readonly organizationTags?: string[];
 }
 
 export interface IBrontosaurusHeader extends EncryptableObject {
