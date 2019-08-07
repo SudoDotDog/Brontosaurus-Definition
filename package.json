@@ -1,6 +1,6 @@
 {
 	"name": "@brontosaurus/definition",
-	"version": "1.6.1",
+	"version": "2.1.1",
 	"description": ":sweat_drops: Definition",
 	"main": "dist/index.js",
 	"directories": {
