@@ -26,6 +26,7 @@ export interface IBrontosaurusBody extends EncryptableObject {
 export interface IBrontosaurusHeader extends EncryptableObject {
 
     readonly algorithm: "RSA-SHA256";
+    readonly alg: "RS256";
     readonly expireAt: number;
     readonly issuedAt: number;
     readonly key: string;
