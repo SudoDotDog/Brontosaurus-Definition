@@ -17,7 +17,7 @@ export interface IBrontosaurusBody extends EncryptableObject {
     readonly tags: string[];
     readonly infos: Record<string, Basics>;
     readonly beacons: Record<string, Basics>;
-    readonly modify: string[];
+    readonly modifies: string[];
 
     readonly email?: string;
     readonly phone?: string;
