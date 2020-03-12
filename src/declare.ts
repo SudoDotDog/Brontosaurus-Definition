@@ -12,6 +12,7 @@ export type EncryptableObject = Record<string, Encryptable>;
 export interface IBrontosaurusBody extends EncryptableObject {
 
     readonly username: string;
+    readonly namespace: string;
     readonly mint: string;
     readonly groups: string[];
     readonly tags: string[];
