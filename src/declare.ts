@@ -4,6 +4,12 @@
  * @description Declare
  */
 
+export enum DEFAULT_BRONTOSAURUS_NAMESPACE {
+
+    DEFAULT = "brontosaurus.default",
+    ADMIN = "brontosaurus.admin",
+}
+
 export type Basics = string | number | boolean;
 export type Encryptable = Basics | Basics[] | Record<string, Basics> | null | undefined;
 
