@@ -39,6 +39,7 @@ export interface IBrontosaurusHeader extends EncryptableObject {
     readonly algorithm: "RSA-SHA256";
     readonly alg: "RS256";
 
+    readonly attempt: string;
     readonly expireAt: number;
     readonly issuedAt: number;
 
