@@ -23,6 +23,7 @@ describe('Given {BrontosaurusDefinition} class', (): void => {
 
     it('should be able to concat values', (): void => {
 
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         const values: [string, string, string] = chance.unique(chance.string, 3) as [string, string, string];
         const length: number = values.reduce((previous: number, current: string) => previous + current.length, 0);
 

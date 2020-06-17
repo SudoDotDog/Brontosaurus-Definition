@@ -5,6 +5,7 @@
         "codecov",
         "deserialize",
         "ifeq",
+        "mocharc",
         "splited",
         "sudoo",
         "triforce",

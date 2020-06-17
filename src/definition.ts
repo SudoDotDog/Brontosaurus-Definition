@@ -8,7 +8,7 @@ import { Base64Converter, IBrontosaurusBody, IBrontosaurusHeader, IBrontosaurusT
 
 export class BrontosaurusDefinition {
 
-    public static withEncoder(encoder: Base64Converter, decoder: Base64Converter) {
+    public static withEncoder(encoder: Base64Converter, decoder: Base64Converter): BrontosaurusDefinition {
 
         return new BrontosaurusDefinition(encoder, decoder);
     }
