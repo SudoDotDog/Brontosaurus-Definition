@@ -4,6 +4,7 @@
  * @description Declare
  */
 
+// eslint-disable-next-line no-shadow
 export enum DEFAULT_BRONTOSAURUS_NAMESPACE {
 
     DEFAULT = "brontosaurus.default",
