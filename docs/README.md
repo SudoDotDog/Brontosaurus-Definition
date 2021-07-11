@@ -1,6 +1,6 @@
 # Brontosaurus-Definition
 
-[![Build Status](https://travis-ci.org/SudoDotDog/Brontosaurus-Definition.svg?branch=master)](https://travis-ci.org/SudoDotDog/Brontosaurus-Definition)
+[![Continuous Integration](https://github.com/SudoDotDog/Brontosaurus-Defination/actions/workflows/ci.yml/badge.svg)](https://github.com/SudoDotDog/Brontosaurus-Defination/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/SudoDotDog/Brontosaurus-Definition/branch/master/graph/badge.svg)](https://codecov.io/gh/SudoDotDog/Brontosaurus-Definition)
 
 :sweat_drops: Definition
